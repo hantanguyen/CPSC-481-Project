@@ -1,31 +1,147 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Styles */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  background: radial-gradient(circle, #1b1c1e, #0b0c0e); /* Adjusted gradient */
+  font-family: "Roboto Condensed", sans-serif;
+  color: #ffffff;
+  margin: 0; /* Ensure no default margins */
+}
+
+/* Form Container */
+.form-container {
+  background-color: transparent;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto; /* Center horizontally */
+  box-sizing: border-box; /* Prevent padding overflow */
+}
+
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: 0; /* Ensures no overlap causing black strips */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid rgba(255, 0, 0, 0.7);
+  border-radius: 10px; /* Adjusted to align with .form-container */
+  pointer-events: none;
+  animation: glow 1.5s infinite;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+  }
+}
+
+/* Form Title */
+.form-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff0000;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+/* Form Styles */
+.fitness-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.single-row {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.heart {
-  color: #ff0000;
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #bbb;
+  margin-bottom: 5px;
 }
 
-.small {
-  font-size: 0.75rem;
+.form-group input,
+.form-group select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  background: #0f1012;
+  color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: #888888;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+  outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 12px;
+  background: linear-gradient(90deg, #ff0000, #770000);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background: #ff0000;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
