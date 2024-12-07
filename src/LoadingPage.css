@@ -1,0 +1,23 @@
+/* LoadingPage.css */
+.loading-page {
+    position: fixed; /* Ensures the loading page covers the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a; /* Dark background for contrast, can be optional */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loading-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the GIF */
+    width: 100%;  /* Makes the GIF cover the full width */
+    height: 100%; /* Makes the GIF cover the full height */
+    object-fit: cover; /* Ensures the GIF maintains its aspect ratio while covering the whole screen */
+  }
+  
