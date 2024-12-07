@@ -33,12 +33,12 @@
 .form-container::before {
   content: "";
   position: absolute;
-  top: 0; /* Ensures no overlap causing black strips */
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   border: 2px solid rgba(255, 0, 0, 0.7);
-  border-radius: 10px; /* Adjusted to align with .form-container */
+  border-radius: 10px;
   pointer-events: none;
   animation: glow 1.5s infinite;
 }
@@ -136,6 +136,74 @@
 .submit-btn:hover {
   background: #ff0000;
   box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure the table content stays within the border */
+}
+
+thead {
+  background: linear-gradient(90deg, #770000, #ff0000); /* Gradient for table header */
+}
+
+thead th {
+  color: #ffffff;
+  font-weight: bold;
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #141516; /* Slightly lighter row for zebra striping */
+}
+
+tbody tr:nth-child(odd) {
+  background: #0f1012; /* Darker row for zebra striping */
+}
+
+tbody tr:hover {
+  background: rgba(255, 0, 0, 0.1); /* Highlight row on hover */
+  cursor: pointer;
+}
+
+tbody td {
+  padding: 15px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+tbody td:last-child {
+  border-bottom: none; /* Remove border for the last row */
+}
+
+table th,
+table td {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Add glowing border on table hover */
+table:hover {
+  box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+}
+
+/* Adjust text alignment for specific columns */
+table th:first-child,
+table td:first-child {
+  text-align: left;
+}
+
+table th:last-child,
+table td:last-child {
+  text-align: center;
 }
 
 /* Responsive Styles */
